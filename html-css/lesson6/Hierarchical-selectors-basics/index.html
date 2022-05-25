@@ -9,24 +9,25 @@
 		integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
 		crossorigin="anonymous"
 	/>
+	<link rel="stylesheet" type="text/css" href="selectors.css" />
 	<style>
-		li {
-				margin-bottom: 16px;
-		}
-		ol li {
-				background-color: green;
-				color: white;
-		}
-		ul li {
-				background-color: orange;
-				color: white;
-		}
-		#special + li > span {
-				border: 3px solid red;
-		}
-		#special ~ li {
-				margin-left: 16px;
-		}
+      li {
+          margin-bottom: 16px;
+      }
+      ol li > span {
+          background-color: green;
+          color: white;
+      }
+      ul li > span {
+          background-color: orange;
+          color: white;
+      }
+      #special + li > span {
+          border: 3px solid red;
+      }
+      #special ~ li {
+          margin-left: 16px;
+      }
 	</style>
 </head>
 
