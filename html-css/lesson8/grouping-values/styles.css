@@ -1,0 +1,11 @@
+.content {
+    width: 420px;
+    height: 140px;
+    padding: 20px;
+    margin: 50px 100px;
+    border-style: solid solid dashed dashed;
+    border-width: 10px 20px;
+    border-color: firebrick chartreuse burlywood aqua;
+    background-color: bisque;
+    font-size: 24px;
+}
