@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.blue {
+    background-color: blue;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid black;
+}
+
+.yellow {
+    background-color: yellow;
+    padding: 50px;
+    border: 2px solid black;
+}
+
+.green {
+    background-color: green;
+    padding: 50px;
+    border: 2px solid black;
+}
+
+.content {
+    padding: 50px;
+    background-color: pink;
+    border: 2px solid black;
+}
