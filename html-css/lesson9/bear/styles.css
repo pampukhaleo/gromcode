@@ -9,13 +9,14 @@
 
 .nav-list {
     margin: 0;
+    list-style-type: none;
 }
 
 .nav-item {
     height: 40px;
-    display: inline-block;
     margin-left: 16px;
     color: white;
+    float: left;
 }
 
 .content {
