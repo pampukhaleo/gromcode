@@ -1,0 +1,67 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    height: 40px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-item {
+    margin-left: 16px;
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar {
+    background-color: grey;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar-text {
+    margin: 16px 0;
+}
+
+.news-list {
+    list-style-type: none;
+    margin-right: auto;
+    padding: 0;
+    line-height: 40px;
+}
+
+.news-list-item {
+    margin-left: 16px;
+}
+
+.footer {
+    height: 40px;
+    background-color: green;
+    display: flex;
+}
+
+.footer-text {
+    margin: auto;
+}
