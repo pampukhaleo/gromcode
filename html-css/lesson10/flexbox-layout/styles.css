@@ -47,7 +47,7 @@
 
 .news-list {
     list-style-type: none;
-    margin-right: auto;
+    margin: 0 auto 0 0;
     padding: 0;
     line-height: 40px;
 }
