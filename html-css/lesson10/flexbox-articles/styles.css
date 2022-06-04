@@ -1,17 +1,12 @@
-body {
+header {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .articles-list {
     display: flex;
     flex-wrap: wrap;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .article {
