@@ -3,12 +3,15 @@ body {
     flex-direction: column;
 }
 
-header {
+.articles-list {
     display: flex;
+    flex-wrap: wrap;
 }
 
-header > h1 {
-    margin: auto;
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .article {
@@ -16,5 +19,5 @@ header > h1 {
     padding: 16px;
     background-color: bisque;
     flex-basis: 300px;
-    flex-wrap: wrap;
+    flex-grow: 1;
 }
