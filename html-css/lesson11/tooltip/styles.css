@@ -3,9 +3,7 @@
     border-bottom: 1px dotted black;
     display: inline-block;
     position: relative;
-    font-weight: bold;
     box-sizing: border-box;
-    /*height: 40px;*/
 }
 
 .tooltip {
