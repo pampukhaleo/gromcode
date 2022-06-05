@@ -8,6 +8,7 @@
     padding: 16px;
     background-color: darkgreen;
     display: inline-block;
+    box-sizing: border-box;
 }
 
 .menu-button:hover {
