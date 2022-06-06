@@ -29,14 +29,14 @@ figcaption {
     text-align: center;
 }
 
-.card:nth-child(1) {
+.card:nth-child(1) img {
     filter: opacity(50%);
 }
 
-.card:nth-child(2) {
+.card:nth-child(2) img {
     filter: blur(4px);
 }
 
-.card:nth-child(3) {
+.card:nth-child(3) img {
     filter: invert(100%);
 }
