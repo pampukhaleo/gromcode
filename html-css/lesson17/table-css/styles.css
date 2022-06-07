@@ -19,11 +19,10 @@ table, td, th {
 
 td, th {
     padding: 4px;
-
 }
 
 tr {
-    /*line-height: 40px;*/
+    line-height: 40px;
 }
 
 tbody > tr:nth-child(odd) {
