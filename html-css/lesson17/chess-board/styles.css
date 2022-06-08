@@ -22,13 +22,10 @@ tr:nth-child(10) > td,
 tr > td:nth-child(1),
 tr > td:nth-child(10) {
     border: none;
-    background-color: white;
+    background-color: white !important;
 }
 
-tr:nth-child(even), tr:nth-child(odd) {
+tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even){
     background-color: black;
 }
 
-td:nth-child(even), td:nth-child(odd) {
-    background-color: white;
-}
