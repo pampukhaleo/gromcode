@@ -25,7 +25,8 @@
     border: solid 4px lightgrey;
     border-top: solid 4px black;
     border-radius: 50%;
-    margin: 8px auto;
+    margin: auto;
+    margin-bottom: 8px;
 
     animation: rotate 2s linear infinite;
 }
