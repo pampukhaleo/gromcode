@@ -1,0 +1,29 @@
+.custom-btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 64px;
+    background-color: coral;
+    color: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    line-height: 50px;
+}
+
+.custom-btn:hover {
+    color: darkcyan;
+}
+
+.custom-svg {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.custom-btn:hover > .custom-svg {
+    fill: green;
+}
