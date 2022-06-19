@@ -29,7 +29,6 @@ body {
 .main {
     flex-grow: 1;
     display: flex;
-    font-size: 1.25em;
 }
 
 .navigation {
@@ -40,6 +39,7 @@ body {
 .section {
     padding: 0.5em;
     width: 60%;
+    font-size: 1.25em;
 }
 
 .news {
