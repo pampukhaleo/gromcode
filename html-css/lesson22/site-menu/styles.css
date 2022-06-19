@@ -44,7 +44,7 @@ button {
 }
 
 .nav-list-link {
-    margin-left: 0.5em;
+    margin: auto 0.5em;
     text-decoration: none;
     color: white;
     overflow: hidden;
