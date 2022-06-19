@@ -1,0 +1,11 @@
+main {
+    display: flex;
+}
+
+picture {
+    margin: auto;
+}
+
+.image {
+    max-width: 100%;
+}
