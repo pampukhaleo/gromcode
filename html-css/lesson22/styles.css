@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    margin: 8px;
+    background-color: #ff7f50;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        display: flex;
+    }
+    .square {
+        background-color: #8a2be2;
+    }
+}
