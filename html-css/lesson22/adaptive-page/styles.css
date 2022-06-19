@@ -101,4 +101,16 @@ body {
     .main {
         flex-direction: row;
     }
+    .content {
+        width: 80%;
+    }
+    .news {
+        width: 20%;
+    }
+    section {
+        width: 75%;
+    }
+    .navigation {
+        width: 25%;
+    }
 }
