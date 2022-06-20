@@ -15,7 +15,10 @@ body {
   width: 100px;
   height: 100px;
   margin: 8px;
-  background-color: #ff7f50;
+
+  @include for-extra-small {
+    background-color: #ff7f50;
+  }
 
   @include for-medium {
     background-color: #8a2be2;
@@ -32,6 +35,10 @@ body {
 
 .container {
   display: flex;
+
+  @include landscape {
+    flex-direction: row;
+  }
 
   @include portrait {
     flex-direction: column;
