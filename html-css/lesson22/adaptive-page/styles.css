@@ -101,16 +101,13 @@ body {
     .main {
         flex-direction: row;
     }
-    .content {
-        width: 80%;
-    }
     .news {
-        width: 20%;
+        width: 20vw;
     }
-    section {
-        width: 75%;
+    .section {
+        width: 60vw;
     }
     .navigation {
-        width: 25%;
+        width: 20vw;
     }
 }
