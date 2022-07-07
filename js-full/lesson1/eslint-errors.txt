@@ -1,4 +1,6 @@
-Comparison a == 1 may cause unexpected type coercion
-'var' is used instead of 'let' or 'const'
-Unresolved variable or type c
-Variable d implicitly declared
+no-var
+eqeqeq
+no-undef
+no-plusplus
+no-return-assign
+no-undef
