@@ -1,10 +1,15 @@
-'use strict'
+function run() {
+  var a = 0;
 
-for (let i=1; i<=5; i++) {
-  console.log(`
-  => ${i} <=
-  `)
-  for (let j=1; j<=9; j++) {
-    console.log(`${i} x ${j} = ${i * j}`)
+  if (a == 1) {
+    return c;
   }
+
+  for (let i = 1; i < 10; i++) {
+    console.log(i);
+  }
+
+  return (d = a);
 }
+
+run();
