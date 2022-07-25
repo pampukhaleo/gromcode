@@ -22,15 +22,15 @@
 // input (num, num)
 // output sum of input numbers
 
-const getSquaredArray = arr =>
+export const getSquaredArray = arr =>
   arr.map(element => element * element);
 
-const getOddNumbers = arr =>
+export const getOddNumbers = arr =>
   arr.filter(number => number % 2 !== 0);
 
-// export default (a, b) => a + b
+export default (a, b) => a + b
 
 const array = [1, 2];
 console.log(getSquaredArray(array));
 
-module.exports = { getSquaredArray, getOddNumbers }
+// module.exports = { getSquaredArray, getOddNumbers }
