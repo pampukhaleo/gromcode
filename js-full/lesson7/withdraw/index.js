@@ -1,6 +1,6 @@
 'use strict';
 
-const withdraw = (clients, balances, client, amount) =>
+export const withdraw = (clients, balances, client, amount) =>
   balances[clients.indexOf(client)] < amount
     ? -1
     : balances[clients.indexOf(client)] - amount;
