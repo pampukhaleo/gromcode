@@ -17,20 +17,24 @@
 
 let defaultNumber = 0;
 
-export const add = number => defaultNumber =+ number;
+const add = (number) => {
+  defaultNumber += number;
+};
 
-export const decrease = number => defaultNumber =- number;
+const decrease = (number) => {
+  defaultNumber -= number;
+};
 
-export const reset = () => defaultNumber = 0;
+const reset = () => {
+  defaultNumber = 0;
+};
 
-export const getMemo = () => defaultNumber;
+const getMemo = () => defaultNumber;
 
 add(3);
 
 console.log(getMemo());
 
 decrease(2);
-
-reset();
 
 console.log(getMemo());
