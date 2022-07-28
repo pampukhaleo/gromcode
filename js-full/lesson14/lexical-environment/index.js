@@ -15,13 +15,15 @@
 // output string
 // change message text
 
+// export functions
+
 let message = 'Just learn it';
 
-const sendMessage = name => {
+export const sendMessage = name => {
   console.log(`${name}, ${message}! Your Gromcode`)
 };
 
-const setMessage = text => {
+export const setMessage = text => {
   message = text
 };
 
