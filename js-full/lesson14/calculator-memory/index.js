@@ -17,11 +17,11 @@
 
 let defaultNumber = 0;
 
-const add = (number) => {
+const add = number => {
   defaultNumber += number;
 };
 
-const decrease = (number) => {
+const decrease = number => {
   defaultNumber -= number;
 };
 
