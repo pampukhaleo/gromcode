@@ -19,15 +19,15 @@
 //    filter memory array Object type with input and returns new array
 //    sort array on Date these objects were added, new messages goes first
 //    return [] if memory array is empty
-//    return [] if input is empty
+//    return sorted memoryArray if input is empty
 
-const createLogger = () => {
+export const createLogger = () => {
   const memoryArray = [];
 
   function warn(text) {
     memoryArray.push({
       message: text,
-      dateTime: new Date().getTime(),
+      dateTime: new Date(),
       type: 'warn',
     });
   }
@@ -35,7 +35,7 @@ const createLogger = () => {
   function error(text) {
     memoryArray.push({
       message: text,
-      dateTime: new Date().getTime(),
+      dateTime: new Date(),
       type: 'error',
     });
   }
@@ -43,7 +43,7 @@ const createLogger = () => {
   function log(text) {
     memoryArray.push({
       message: text,
-      dateTime: new Date().getTime(),
+      dateTime: new Date(),
       type: 'log',
     });
   }
@@ -68,14 +68,28 @@ const createLogger = () => {
 
 const logger1 = createLogger();
 
+setTimeout(() => {
+  logger1.log('aa');
+}, 1000)
+setTimeout(() => {
+  logger1.log('ab');
+}, 2000)
+setTimeout(() => {
+  logger1.log('ac');
+}, 3000)
 logger1.log('a');
 logger1.warn('User is string to entered restricted page');
 logger1.log('b');
 logger1.error('Unexpected error on the site');
 logger1.log('c');
 
-console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
-console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
+setTimeout(() => {
+  console.log(logger1.getRecords());
+  console.log(logger1.getRecords('log'));
+}, 3500)
+
+// console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
+// console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
 // console.log(logger1.getRecords('error')); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }]
 // console.log(logger1.getRecords('warn')); // ===> [{ message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }]
 
@@ -85,6 +99,6 @@ console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', t
 // console.log(logger2.getRecords('warn')); // ===> [{ message: 'Opps, something is happenning', type: 'warn', dateTime: Date }]
 // console.log(logger2.getRecords()); // ===> [{ message: 'Opps, something is happenning', type: 'warn', dateTime: Date }]
 
-// const logger3 = createLogger();
-// console.log(logger3.getRecords('error')); // ===> []
-// console.log(logger3.getRecords()); // ===> []
+const logger3 = createLogger();
+console.log(logger3.getRecords('error')); // ===> []
+console.log(logger3.getRecords()); // ===> []
