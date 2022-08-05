@@ -70,13 +70,13 @@ const logger1 = createLogger();
 
 setTimeout(() => {
   logger1.log('aa');
-}, 1000)
+}, 1000);
 setTimeout(() => {
   logger1.log('ab');
-}, 2000)
+}, 2000);
 setTimeout(() => {
   logger1.log('ac');
-}, 3000)
+}, 3000);
 logger1.log('a');
 logger1.warn('User is string to entered restricted page');
 logger1.log('b');
@@ -86,7 +86,7 @@ logger1.log('c');
 setTimeout(() => {
   console.log(logger1.getRecords());
   console.log(logger1.getRecords('log'));
-}, 3500)
+}, 3500);
 
 // console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
 // console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]

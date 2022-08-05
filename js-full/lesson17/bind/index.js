@@ -1,4 +1,5 @@
 /* ===> 1 <=== */
+
 const student = {
   name: 'Tom',
 };
@@ -12,16 +13,25 @@ function sayName() {
  * используйте .bind и ф-цию sayName
  */
 
-function sayStudentName() {
-  return () => sayName.bind(student)
-}
-sayStudentName()
+export const sayStudentName = () => {
+  const func = sayName.bind(student);
+  return func();
+};
+
+// sayStudentName();
 /*
  * создайте ф-цию sayBruceName которая будет выводить в консоль имя 'Bruce'
  * используйте ф-цию sayName и .bind с нужным объектом
  */
 
 // sayName.bind({ name: 'Bruce'})
+
+export const sayBruceName = () => {
+  const func = sayName.bind({ name: 'Bruce' });
+  return func();
+};
+
+// sayBruceName();
 
 /* ===> 2 <=== */
 const company = {
@@ -38,6 +48,13 @@ function greeting(firstName, lastName) {
  * используйте ф-цию greeting и .bind с нужным объектом и аргументами
  * specialGreeting не должна принимать ни одного аргумента
  */
+
+export const specialGreeting = () => {
+  const func = greeting.bind(company, 'Bob', 'Marley');
+  return func();
+};
+
+// specialGreeting();
 
 /* ===> 3 <=== */
 const country = {
@@ -56,6 +73,13 @@ function getPopulation(population) {
  * используйте ф-цию getPopulation и .bind с нужным объектом и аргументами
  * getUkrainePopulation не должна принимать ни одного аргумента
  */
+
+export const getUkrainePopulation = () => {
+  const func = getPopulation.bind(country);
+  return func(43000);
+};
+
+// getUkrainePopulation();
 
 /* ===> 4 <=== */
 const transaction = {
@@ -81,3 +105,10 @@ const anotherTransaction = {
  * используйте метод transaction.printTransaction и .bind с нужным объектом
  * printSpecialTransaction не должна принимать ни одного аргумента
  */
+
+export const printSpecialTransaction = () => {
+  const func = transaction.printTransaction.bind(anotherTransaction);
+  return func();
+};
+
+// printSpecialTransaction();
