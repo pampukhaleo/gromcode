@@ -9,7 +9,7 @@
 // method startTimer adds 1 to secondsPassed every second
 // to start timer use method setInterval
 // when secondsPassed = 60 it resets and adds 1 to minsPassed. loop goes from start
-// method getTime return timer state in 1:05 format. adds 0 if it less then 10
+// method getTime return timer state in 1:05 format. adds 0 if it less than 10
 // method stopTimer stops timer and saves result. if use start timer it starts from saved result
 // method clearInterval stops timer
 // method resetTimer resets timer to start
