@@ -11,7 +11,7 @@
  */
 class Order {
   constructor(price, city, type) {
-    this.ID = Math.floor(Math.random() * 1000);
+    this.id = Math.random().toString().slice(2, 7)
     this.price = price;
     this.dateCreated = new Date()
     this.dateConfirmed = 0;
