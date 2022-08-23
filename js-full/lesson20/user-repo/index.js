@@ -2,54 +2,60 @@
 
 class User {
   constructor(id, name, sessionId) {
-    this.id = id
-    this.name = name
-    this.sessionId = sessionId
-    Object.freeze(this)
+    this._id = id;
+    this._name = name;
+    this._sessionId = sessionId;
+  }
+
+  get id() {
+    return this._id;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get sessionId() {
+    return this._sessionId;
   }
 }
 
 class UserRepository {
   constructor(array) {
-    this.array = array
-    Object.freeze(this)
+    this._users = Object.freeze(array);;
+  }
+
+  get users() {
+    return this._users;
   }
 
   getUserNames() {
-    const namesArray = []
-    this.array.map((user) => namesArray.push(user.name))
-    return console.log(namesArray)
+    return this._users.map(user => user.name)
   }
 
   getUserIds() {
-    const IdArray = []
-    this.array.map((user) => IdArray.push(user.id))
-    return console.log(IdArray)
+    return this._users.map(user => user.id);
   }
 
-  userNameById(id) {
-    const idByNameArray = []
-    this.array.map((user) => {
-      if (id === +user.id) {
-        return idByNameArray.push(user.name)
-      }
-    })
-    return console.log(idByNameArray)
+  getUserNameById(id) {
+    const user = this._users.find(user => user.id === id);
+    return user ? user.name : null;
   }
 }
 
 // examples
 const user = new User('1', 'Tom', 'session-id');
 const user1 = new User('2', 'Dom', 'session-id');
-Object.freeze(user)
-const usersArray = new UserRepository([user, user1])
+// Object.freeze(user)
+const usersArray = new UserRepository([user, user1]);
 // получить свойства можем
-usersArray.getUserNames()
-usersArray.userNameById(1)
+console.log(usersArray.getUserNames());
+console.log(usersArray.getUserIds());
+console.log('name', usersArray.getUserNameById('1'));
 console.log(user.id); // ===> '1'
 console.log(user.name); // ===> 'Tom'
 console.log(user.sessionId); // ===> 'session-id'
 
 // но изменить эти свойства нельзя
-user.name = 'Bob'; // пытаемся изменить старое значение
-console.log(user.name); // ===> 'Tom' - но изменение проигнорировано, так как setter отсутствует
+// user.name = 'Bob'; // пытаемся изменить старое значение
+// console.log(user.name); // ===> 'Tom' - но изменение проигнорировано, так как setter отсутствует
