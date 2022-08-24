@@ -2,7 +2,7 @@
 
 export const getTitleElement = () => {
   const title = document.querySelector('.title');
-  console.log(title);
+  console.dir(title);
 
   return title;
 };
@@ -11,7 +11,7 @@ getTitleElement();
 
 export const getInputElement = () => {
   const input = document.querySelector('input[type=text]');
-  console.log(input);
+  console.dir(input);
 
   return input;
 };
