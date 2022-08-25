@@ -1,10 +1,11 @@
 'use strict'
 
-export const setTitle = text => {
-  const title = document.querySelector('.title')
-  console.log(title);
-  title.textContent = text
-  return title
+export const setButton = buttonText => {
+  const body = document.querySelector('body')
+  const btn = document.createElement('button')
+  btn.append(buttonText)
+  body.innerHTML = `<button>${buttonText}</button>`
+  body.textContent = `<button>${buttonText}</button>`
 }
 
-setTitle('hi')
+setButton('hi')
