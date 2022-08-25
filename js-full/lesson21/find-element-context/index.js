@@ -9,7 +9,7 @@ console.log(getTitle());
 
 export const getDescription = () => {
   const description = document.querySelector('.about')
-  return description.innerHTML
+  return description.innerText
 }
 
 console.log(getDescription());
