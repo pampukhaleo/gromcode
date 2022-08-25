@@ -5,7 +5,7 @@ export const setButton = buttonText => {
   const btn = document.createElement('button')
   btn.append(buttonText)
   body.innerHTML = `<button>${buttonText}</button>`
-  body.textContent = `<button>${buttonText}</button>`
+  // body.textContent = `<button>${buttonText}</button>`
 }
 
 setButton('hi')
