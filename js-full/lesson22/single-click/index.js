@@ -1,6 +1,9 @@
-'use strict'
+'use strict';
 
-const btnElem = document.querySelector('.single-use-btn')
-btnElem.addEventListener('click', () => {
+const btnElem = document.querySelector('.single-use-btn');
+const logClick = () => {
   console.log('clicked');
-}, { once: true })
+  btnElem.removeEventListener('click', logClick)
+}
+btnElem.addEventListener('click', logClick)
+
