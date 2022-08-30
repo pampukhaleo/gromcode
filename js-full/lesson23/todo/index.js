@@ -39,6 +39,9 @@ const taskInput = document.querySelector('.task-input');
 const createBtn = document.querySelector('.create-task-btn');
 
 const onBtnClick = () => {
+  if (!taskInput.value) {
+    return;
+  }
   tasks.push({ text: taskInput.value, done: false, id: Math.random().toString(36).slice(2) });
   listElem.textContent = '';
   renderTasks(tasks);
