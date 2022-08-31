@@ -32,4 +32,4 @@ export const getDiff = (startDate, endDate) => {
   return `${daysDiff}d ${hoursDiff}h ${minutesDiff}m ${timeDiff}s`
 }
 
-console.log(getDiff(new Date(2020, 2,1,10, 55, 50), new Date(2021, 1, 1, 11, 57, 55)))
+// console.log(getDiff(new Date(2020, 2,1,10, 55, 50), new Date(2021, 1, 1, 11, 57, 55)))
