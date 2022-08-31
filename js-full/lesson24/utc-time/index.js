@@ -8,5 +8,3 @@ const formatter = new Intl.DateTimeFormat('en', {
 })
 
 export const getGreenwichTime = date => formatter.format(date)
-
-console.log(getTime(new Date()));
