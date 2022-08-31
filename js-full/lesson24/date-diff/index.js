@@ -1,6 +1,6 @@
 'use strict';
 
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
 
   // get total seconds between the times
   let timeDiff = (endDate.getTime() - startDate.getTime()) / 1000;
