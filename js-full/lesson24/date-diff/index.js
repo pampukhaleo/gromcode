@@ -1,6 +1,6 @@
 'use strict';
 
-export const getDiff = (startDate, endDate) => {
+const getDiff = (startDate, endDate) => {
   // get total seconds between the times
   let timeDiff = Math.abs(endDate - startDate) / 1000;
   console.log('seconds diff', timeDiff);
@@ -20,15 +20,15 @@ export const getDiff = (startDate, endDate) => {
   timeDiff -= minutesDiff * 60;
   console.log('seconds diff after minutes subtract', timeDiff);
 
-  const secondsDiff = timeDiff % 60;
+  const secondsDiff = Math.floor(timeDiff) % 60;
   console.log('seconds diff after minutes subtract', timeDiff);
 
   console.log('days diff', daysDiff);
   console.log('hour diff', hoursDiff);
   console.log('min diff', minutesDiff);
-  console.log('sec diff', timeDiff);
+  console.log('sec diff', secondsDiff);
 
   return `${daysDiff}d ${hoursDiff}h ${minutesDiff}m ${secondsDiff}s`;
 };
 
-// console.log(getDiff(new Date(2020, 2,1,10, 55, 50), new Date(2021, 1, 1, 11, 57, 55)))
+console.log(getDiff(new Date(2020, 1,3,10, 55, 50), new Date(2020, 1, 2, 11, 57, 55.55)))
