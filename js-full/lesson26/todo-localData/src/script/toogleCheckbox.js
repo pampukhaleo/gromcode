@@ -2,7 +2,6 @@ import { getItem } from "./storage.js";
 import { renderTasks } from "./renderer.js";
 
 export const onCheckboxSelect = event => {
-  // const listElem = document.querySelector('.list');
   const tasksList = getItem('tasksList')
 
   tasksList.map(element => {
@@ -12,7 +11,6 @@ export const onCheckboxSelect = event => {
         : element.done = true
     }
   });
-  // listElem.textContent = '';
 
   renderTasks()
 };

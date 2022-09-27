@@ -3,7 +3,6 @@ import { renderTasks } from "./renderer.js";
 
 export const onBtnClick = () => {
   const taskInputELem = document.querySelector('.task-input');
-  // const listElem = document.querySelector('.list');
 
   if (!taskInputELem.value) {
     return;
@@ -16,8 +15,9 @@ export const onBtnClick = () => {
       done: false,
       id: Math.random().toString(36).slice(2)
     });
-  // listElem.textContent = '';
+
   taskInputELem.value = ''
+
   setItem('tasksList', newTasksList)
 
   renderTasks()
