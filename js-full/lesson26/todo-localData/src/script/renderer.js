@@ -1,9 +1,9 @@
-import { getItem } from "./storage.js";
+import { getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
 
 export const renderTasks = () => {
-  const tasksList = getItem('tasksList') || []
+  const tasksList = getItem('tasksList') || [];
   console.log(tasksList);
   listElem.textContent = '';
 

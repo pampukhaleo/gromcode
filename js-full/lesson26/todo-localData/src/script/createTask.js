@@ -1,5 +1,5 @@
-import { getItem, setItem } from "./storage.js";
-import { renderTasks } from "./renderer.js";
+import { getItem, setItem } from './storage.js';
+import { renderTasks } from './renderer.js';
 
 export const onBtnClick = () => {
   const taskInputELem = document.querySelector('.task-input');
@@ -7,19 +7,17 @@ export const onBtnClick = () => {
   if (!taskInputELem.value) {
     return;
   }
-  const tasksList = getItem('tasksList') || []
+  const tasksList = getItem('tasksList') || [];
 
-  const newTasksList = tasksList
-    .concat({
-      text: taskInputELem.value,
-      done: false,
-      id: Math.random().toString(36).slice(2)
-    });
+  const newTasksList = tasksList.concat({
+    text: taskInputELem.value,
+    done: false,
+    id: Math.random().toString(36).slice(2),
+  });
 
-  taskInputELem.value = ''
+  taskInputELem.value = '';
 
-  setItem('tasksList', newTasksList)
+  setItem('tasksList', newTasksList);
 
-  renderTasks()
+  renderTasks();
 };
-
