@@ -20,7 +20,7 @@ const setMethodsNames = {
 
 // ф-ция помогает добавить или отнять определенное количество времени от заданного
 // урпощенный аналог популярной библиотеки moment
-const shmoment = date => {
+export const shmoment = date => {
   let result = new Date(date);
 
   const calculator = {
@@ -39,5 +39,3 @@ const shmoment = date => {
 
   return calculator;
 };
-
-export default shmoment;
