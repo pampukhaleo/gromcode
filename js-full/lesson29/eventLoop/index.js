@@ -20,3 +20,5 @@ export const printing = () => {
 
   console.log(3);
 };
+
+printing();
