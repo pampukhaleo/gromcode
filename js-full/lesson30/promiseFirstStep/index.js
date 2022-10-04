@@ -8,12 +8,13 @@ export const addImage = src => {
     containerElem.append(imgElem);
 
     const onImgLoad = () => {
-      resolve({ width: 200, height: 100 });
+      const { width, height } = imgElem;
+      resolve({ width, height });
     };
 
     imgElem.addEventListener('load', onImgLoad);
 
-    const onImgLoadError = () => reject(new Error('Image is not loaded'));
+    const onImgLoadError = () => reject(new Error('Image load is failed'));
 
     imgElem.addEventListener('error', onImgLoadError);
   });
