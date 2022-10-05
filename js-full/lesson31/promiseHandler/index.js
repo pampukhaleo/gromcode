@@ -25,6 +25,6 @@ export const requestUserData = userId => {
   return p
 }
 
-// requestUserData('broken')
-//   .then(data => console.log(data))
-//   .catch(error => console.log(error))
+requestUserData('userid777')
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
