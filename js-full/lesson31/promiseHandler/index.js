@@ -4,8 +4,7 @@
  * @param {string} userId
  * @return {promise}
  */
-export const requestUserData = userId => {
-  const p = new Promise((resolve, reject) => {
+export const requestUserData = userId => new Promise((resolve, reject) => {
     if (userId === 'broken') {
       setTimeout(() => {
         reject(new Error('User not found'))
@@ -16,15 +15,12 @@ export const requestUserData = userId => {
           name: 'John',
           age: 17,
           userId,
-          email: 'userid777@example.com',
+          email: `${userId}@example.com`,
         })
       }, 1000)
     }
   })
 
-  return p
-}
-
-requestUserData('userid777')
-  .then(data => console.log(data))
-  .catch(error => console.log(error))
+// requestUserData('userid777')
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error))
