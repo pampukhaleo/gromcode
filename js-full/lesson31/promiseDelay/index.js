@@ -1,4 +1,4 @@
-const delay = num => new Promise(resolve => {
+export const delay = num => new Promise(resolve => {
   setTimeout(() => {
     resolve()
   }, num)
