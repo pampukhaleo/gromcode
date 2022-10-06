@@ -8,22 +8,14 @@ const promiseNumber3 = Promise.resolve(8);
  */
 
 // update code below
-const resultPromise = (...numbers) => {
-  const result = numbers.map(num => num);
-  console.log(result);
-  return Promise.resolve(result);
-};
+export const resultPromise = Promise.all([promiseNumber1, promiseNumber2, promiseNumber3])
 
-console.log(resultPromise(promiseNumber1, promiseNumber2, promiseNumber3));
-
-// resultPromise
-//   .then(numbersList => {
-//     console.log('list', numbersList);
-//     const sum = numbersList.reduce((acc, num) => acc + num, 0);
-//     return sum;
-//   })
-//   .then(result => {
-//     console.log(result); // 98
-//   });
-
-// resultPromise(promiseNumber1, promiseNumber2, promiseNumber3);
+resultPromise
+  .then(numbersList => {
+    console.log(numbersList);
+    const sum = numbersList.reduce((acc, num) => acc + num, 0);
+    return sum;
+  })
+  .then(result => {
+    console.log(result); // 98
+  });
