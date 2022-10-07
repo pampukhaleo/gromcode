@@ -7,19 +7,19 @@ const formBtnElem = document.querySelector('.name-form__btn')
 
 const url = 'https://api.github.com/users'
 
-const fetchUserData = url => {
+export const fetchUserData = url => {
   const userName = formInputElem.value;
   return fetch(`${url}/${userName}`)
     .then(response => response.json())
 }
 
-const renderData = ({ avatar_url, name, location }) => {
+export const renderData = ({ avatar_url, name, location }) => {
   avatarElem.src = avatar_url;
   userNameElem.textContent = name;
   locationElem.textContent = location;
 }
 
-const onBtnClick = () => {
+export const onBtnClick = () => {
   fetchUserData(url)
     .then(result => renderData(result))
 }
