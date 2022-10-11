@@ -1,43 +1,38 @@
-const baseUrl = 'https://63453f7539ca915a69f9a53e.mockapi.io/api/v1/users'
+const baseUrl = 'https://63453f7539ca915a69f9a53e.mockapi.io/api/v1/users';
 
-const loginForm = document.querySelector('.login-form')
-const submitBtnElem = document.querySelector('.submit-button')
+const loginForm = document.querySelector('.login-form');
+const submitBtnElem = document.querySelector('.submit-button');
 
-const formElems = document.querySelectorAll('.form-input')
-Array.from(formElems).map(input => {
-  input.addEventListener('input', event => {
-    if (loginForm.reportValidity()) {
-      submitBtnElem.disabled = false
-    } else {
-      submitBtnElem.disabled = true
-    }
-  })
-})
+const formElems = document.querySelectorAll('.form-input');
+Array.from(formElems).map(input =>
+  input.addEventListener('input', () => {
+    submitBtnElem.disabled = !loginForm.reportValidity();
+  }),
+);
 
 const addUser = userData => {
   fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(userData)
+    body: JSON.stringify(userData),
   })
     .then(response => response.json())
-    .then(result => alert(JSON.stringify(result)))
-}
+    .then(result => alert(JSON.stringify(result)));
+};
 
-const onSubmit = (event) => {
-  event.preventDefault()
+const onSubmit = event => {
+  event.preventDefault();
   const { email, name, password } = Object.fromEntries(new FormData(loginForm));
 
   const userData = {
     email,
     name,
-    password
-  }
+    password,
+  };
 
-  addUser(userData)
-  loginForm.reset()
-}
+  addUser(userData).then(() => loginForm.reset());
+};
 
-loginForm.addEventListener('submit', onSubmit)
+loginForm.addEventListener('submit', onSubmit);
