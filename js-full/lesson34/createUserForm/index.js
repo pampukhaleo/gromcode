@@ -19,7 +19,8 @@ const addUser = userData => {
     body: JSON.stringify(userData),
   })
     .then(response => response.json())
-    .then(result => alert(JSON.stringify(result)));
+    .then(result => alert(JSON.stringify(result)))
+    .then(() => loginForm.reset());
 };
 
 const onSubmit = event => {
@@ -32,7 +33,7 @@ const onSubmit = event => {
     password,
   };
 
-  addUser(userData).then(() => loginForm.reset());
+  addUser(userData);
 };
 
 loginForm.addEventListener('submit', onSubmit);
