@@ -8,14 +8,22 @@ const repoListElem = document.querySelector('.repo-list');
 const avatarBaseUrl = 'https://avatars3.githubusercontent.com/u10001';
 avatarElem.src = avatarBaseUrl;
 
+const repoNameElem = name => {
+  const repoListItemElem = document.createElement('span');
+  repoListItemElem.classList.add('repo-list__item');
+  repoListItemElem.textContent = name;
+
+  return repoListItemElem;
+};
+
 export const renderer = ({ avatar_url, name, location, repos_url }) => {
   avatarElem.src = avatar_url;
   userNameElem.textContent = name;
   locationElem.textContent = location ? `from ${location}` : '';
 
-  findRepository(repos_url).then(data =>
-    data.map(repo => {
-      repoListElem.innerHTML = `<span class='.repo-list'>${repo.name}<span>`;
-    }),
-  );
+  repoListElem.textContent = '';
+
+  findRepository(repos_url)
+    .then(data => data.map(repository => repoNameElem(repository.name)))
+    .then(res => repoListElem.append(...res));
 };

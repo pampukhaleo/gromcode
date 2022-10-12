@@ -1,5 +1,5 @@
 import { getRepos } from './usersGateway.js';
 
 export const findRepository = url => {
-  return getRepos(url).then(data => data);
+  return getRepos(url);
 };
