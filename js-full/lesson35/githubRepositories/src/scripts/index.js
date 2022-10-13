@@ -12,7 +12,7 @@ const defaultUser = {
   location: '',
 };
 
-export const onUserSearch = () => {
+const onUserSearch = () => {
   const userName = inputElem.value;
   clearData();
   renderUserData(defaultUser);
