@@ -3,7 +3,7 @@
  * @return {promise}
  */
 
-export const getUsersBlogs = async users => {
+const getUsersBlogs = async users => {
   // put your code here
   const blogList = users.map(async userName => {
     const response = await fetch(`https://api.github.com/users/${userName}`);
