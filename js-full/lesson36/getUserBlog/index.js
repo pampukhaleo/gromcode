@@ -5,7 +5,6 @@
 
 export const getUsersBlogs = async users => {
   // put your code here
-
   const blogList = users.map(async userName => {
     const response = await fetch(`https://api.github.com/users/${userName}`);
     const { blog } = await response.json();
@@ -14,8 +13,7 @@ export const getUsersBlogs = async users => {
     }
     throw new Error('error');
   });
-
-  return blogList;
+  return Promise.all(blogList);
 };
 
 // getUsersBlogs('facebook').then(data => console.log(data));
