@@ -1,4 +1,4 @@
-import { initHandlers } from './actions.js';
+import { initHandlers } from './initHandlers.js';
 import { renderUserData } from './renderUserData.js';
 
 const defaultUser = {
