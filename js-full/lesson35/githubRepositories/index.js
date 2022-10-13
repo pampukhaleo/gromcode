@@ -1,8 +1,8 @@
-import { renderUserData } from './renderUserData.js';
-import { fetchReposData, fetchUserData } from './usersGateway.js';
-import { renderReposData } from './renderRepos.js';
-import { hideSpinner, showSpinner } from './spinner.js';
-import { clearData } from './clearData.js';
+import { renderUserData } from './src/scripts/renderUserData.js';
+import { fetchReposData, fetchUserData } from './src/scripts/usersGateway.js';
+import { renderReposData } from './src/scripts/renderRepos.js';
+import { hideSpinner, showSpinner } from './src/scripts/spinner.js';
+import { clearData } from './src/scripts/clearData.js';
 
 const inputElem = document.querySelector('.name-form__input');
 
