@@ -1,15 +1,21 @@
 const baseUrl = 'https://api.github.com/users';
 
-export const getUser = userName => {
+export const fetchUserData = userName => {
   return fetch(`${baseUrl}/${userName}`, {
     method: 'GET',
-  })
-    .then(response => response.json())
-    .catch(() => alert(new Error('Failed to load data')));
+  }).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Failed to load data');
+  });
 };
 
-export const getRepos = reposUrl => {
-  return fetch(reposUrl)
-    .then(response => response.json())
-    .catch(() => alert(new Error('Failed to load data')));
+export const fetchReposData = reposUrl => {
+  return fetch(reposUrl).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Failed to load data');
+  });
 };
