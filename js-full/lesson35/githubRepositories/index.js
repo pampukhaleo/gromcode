@@ -15,7 +15,7 @@ const defaultUser = {
 const onUserSearch = () => {
   const userName = inputElem.value;
   clearData();
-  renderUserData(defaultUser);
+  // renderUserData(defaultUser);
   showSpinner();
   fetchUserData(userName)
     .then(data => {
