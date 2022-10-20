@@ -2,9 +2,9 @@ module.exports = {
   extends: 'eslint-config-airbnb-base',
   parserOptions: {
     ecmaVersion: 10,
-    sourceType: "module"
+    sourceType: 'module',
   },
   env: {
-    browser: true
-  }
-}
+    browser: true,
+  },
+};
