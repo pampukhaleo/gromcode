@@ -1,4 +1,4 @@
-// file path: src/index.js
+// file path: src/index.jsx
 
 import { printProfile } from './profile';
 

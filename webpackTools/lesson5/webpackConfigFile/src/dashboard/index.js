@@ -1,4 +1,4 @@
-// file path: src/dashboard/index.js
+// file path: src/dashboard/index.jsx
 
 import renderDashboard from './renderDashboard';
 

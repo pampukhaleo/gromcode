@@ -1,4 +1,4 @@
-// file path: calculator/index.js
+// file path: calculator/index.jsx
 
 // экспортируйте sum и mult как именной export
 
@@ -14,7 +14,7 @@ export const mult = (a, b) => {
 
 // экспортируйте calc как export по умолчанию
 
-export default expression => {
+export default (expression) => {
   console.log('implementation for calc');
   // ... implementation
 };

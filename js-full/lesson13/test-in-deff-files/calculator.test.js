@@ -1,5 +1,5 @@
 import getSum, { getSquaredArray, getOddNumbers } from './calculator.js';
-// const { getSquaredArray, getOddNumbers } = require('./index.js')
+// const { getSquaredArray, getOddNumbers } = require('./index.jsx')
 
 it('should get squared numbers', () => {
   const result = getSquaredArray([1, 2, 3, 4]);
