@@ -5,8 +5,8 @@ import Avatar from "./Avatar.jsx";
 function UserInfo(props) {
   return (
     <div className="user-info">
-      <Avatar name={props.author.name} avatarUrl={props.author.avatarUrl} />
-      <div className="user-info__name">{props.author.name}</div>
+      <Avatar name={props.user.name} avatarUrl={props.user.avatarUrl} />
+      <div className="user-info__name">{props.user.name}</div>
     </div>
   );
 }
