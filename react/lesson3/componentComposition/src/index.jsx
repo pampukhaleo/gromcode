@@ -10,6 +10,6 @@ const user = {
   avatarUrl: 'https://github.com/github.png'
 }
 
-const App = () => <Comment user={user} text={'Hello'} date={new Date()} />
+const App = () => <Comment author={user} text={'Hello'} date={new Date()} />
 
 ReactDOM.render(<App />, rootElement);
