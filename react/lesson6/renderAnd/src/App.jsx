@@ -4,7 +4,7 @@ import Mailbox from "./Mailbox.jsx";
 const App = () => {
   return (
     <>
-      <Mailbox messages={[]}/>
+      <Mailbox unreadMessages={[]}/>
     </>
 )
 }
