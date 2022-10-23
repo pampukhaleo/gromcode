@@ -3,7 +3,7 @@ import React from "react";
 const Online = () => {
   return (
     <div className="status">
-      <span className="status__text">Online</span>
+      <span className="status__text">All good!</span>
     </div>
   )
 }
