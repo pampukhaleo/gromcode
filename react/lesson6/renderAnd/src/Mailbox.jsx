@@ -5,7 +5,6 @@ const Mailbox = ({ unreadMessages }) => {
 
   return (
     <div className='mailbox__text'>Messages {messageCount}</div>
-
   )
 }
 
