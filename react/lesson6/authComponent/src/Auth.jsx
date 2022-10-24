@@ -31,7 +31,7 @@ class Auth extends React.Component {
   render() {
     return (
       this.state.isLoading
-        ? <Spinner size={'50px'}/>
+        ? <Spinner size={25}/>
         : this.state.isOnline
           ? <Logout onLogout={this.handleLogout} />
           : <Login onLogin={this.handleLogin} />
