@@ -19,13 +19,13 @@ class Auth extends React.Component {
     this.setState({
       isLoading: true
     })
+
     setTimeout(() => {
       this.setState({
         isLoading: false,
         isOnline: true
       })
     }, 2000)
-
   }
 
   render() {

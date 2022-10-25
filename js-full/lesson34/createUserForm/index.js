@@ -4,13 +4,11 @@ const loginForm = document.querySelector('.login-form');
 const submitBtnElem = document.querySelector('.submit-button');
 
 const formElems = document.querySelectorAll('.form-input');
-Array.from(formElems).map(input =>
-  input.addEventListener('input', () => {
-    submitBtnElem.disabled = !loginForm.reportValidity();
-  }),
-);
+Array.from(formElems).map((input) => input.addEventListener('input', () => {
+  submitBtnElem.disabled = !loginForm.reportValidity();
+}));
 
-const addUser = userData => {
+const addUser = (userData) => {
   fetch(baseUrl, {
     method: 'POST',
     headers: {
@@ -18,12 +16,12 @@ const addUser = userData => {
     },
     body: JSON.stringify(userData),
   })
-    .then(response => response.json())
-    .then(result => alert(JSON.stringify(result)))
+    .then((response) => response.json())
+    .then((result) => alert(JSON.stringify(result)))
     .then(() => loginForm.reset());
 };
 
-const onSubmit = event => {
+const onSubmit = (event) => {
   event.preventDefault();
   const { email, name, password } = Object.fromEntries(new FormData(loginForm));
 
