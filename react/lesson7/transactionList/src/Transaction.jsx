@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const Transactions = ({ time, from, to, rate, amount }) => {
+const Transaction = ({ time, from, to, rate, amount }) => {
   const dayDate = moment(time).format('DD MMM');
   const dayTime = moment(time).format('HH:mm');
   const transactionAmount = new Intl.NumberFormat('en-GB').format(amount);
@@ -18,4 +18,4 @@ const Transactions = ({ time, from, to, rate, amount }) => {
   );
 };
 
-export default Transactions;
+export default Transaction;
