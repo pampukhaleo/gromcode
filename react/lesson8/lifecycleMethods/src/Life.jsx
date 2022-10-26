@@ -15,7 +15,7 @@ class Life extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props !== prevProps) {
+    if (prevProps) {
       console.log('componentDidUpdate(prevProps, prevState): some updates based on new props')
     }
   }
