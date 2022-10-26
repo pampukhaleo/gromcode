@@ -4,6 +4,9 @@ class Life extends React.Component {
   constructor(props) {
     super(props);
     console.log('constructor: good place to create state')
+    this.state = {
+      test: null
+    }
   }
 
   componentDidMount() {
@@ -12,10 +15,13 @@ class Life extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render')
+    this.setState({
+      test: nextProps
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps) {
+    if (prevProps !== this.state.props) {
       console.log('componentDidUpdate(prevProps, prevState): some updates based on new props')
     }
   }
