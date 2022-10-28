@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
   state = {
-    status: 'Online',
+    status: 'online',
   };
 
   handleOnline = () => {
     this.setState({
-      status: 'Online',
+      status: 'online',
     });
   };
 
   handleOffline = () => {
     this.setState({
-      status: 'Offline',
+      status: 'offline',
     });
   };
 
