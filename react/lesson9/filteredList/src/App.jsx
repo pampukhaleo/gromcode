@@ -1,5 +1,5 @@
 import React from "react";
-import UserList from "./UserList.jsx";
+import UsersList from "./UsersList.jsx";
 
 const usersData = [
   {
@@ -29,7 +29,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <UserList users={usersData}/>
+      <UsersList users={usersData}/>
     )
   }
 }

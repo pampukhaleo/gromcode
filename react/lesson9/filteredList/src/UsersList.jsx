@@ -2,7 +2,7 @@ import React from "react";
 import User from './User.jsx'
 import Filter from "./Filter.jsx";
 
-class UserList extends React.Component {
+class UsersList extends React.Component {
   state = {
     filterText: '',
   }
@@ -32,4 +32,4 @@ class UserList extends React.Component {
   }
 }
 
-export default UserList;
+export default UsersList;
