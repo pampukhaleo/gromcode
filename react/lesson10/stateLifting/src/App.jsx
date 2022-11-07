@@ -4,7 +4,7 @@ import UserProfile from "./UserProfile.jsx";
 
 class App extends React.Component {
   state = {
-    user: null
+    userData: null
   }
 
   componentDidMount() {
@@ -14,22 +14,21 @@ class App extends React.Component {
   fetchUser = userId => {
     fetch(`https://api.github.com/users/${userId}`)
       .then(response => response.json())
-      .then(data => {
-        this.setState({user: data})
+      .then(userData => {
+        this.setState({userData})
       })
   }
 
   render() {
-    if (!this.state.user) {
+    if (!this.state.userData) {
       return null
     }
-    console.log(this.state.user)
     return (
       <div className="page">
         <header className="header">
-          <UserMenu userData={this.state.user}/>
+          <UserMenu userData={this.state.userData}/>
         </header>
-        <UserProfile userData={this.state.user} />
+        <UserProfile userData={this.state.userData} />
       </div>
     )
   }
