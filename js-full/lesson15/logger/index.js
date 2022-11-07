@@ -52,9 +52,7 @@ export const createLogger = () => {
     if (type === undefined || memoryArray.length === 0) {
       return memoryArray.sort((a, b) => b.dateTime - a.dateTime);
     }
-    const filteredArray = memoryArray.filter(message => {
-      return message.type === type;
-    });
+    const filteredArray = memoryArray.filter((message) => message.type === type);
     return filteredArray.sort((a, b) => b.dateTime - a.dateTime);
   }
 
@@ -78,7 +76,7 @@ setTimeout(() => {
   logger1.log('ac');
 }, 3000);
 logger1.log('a');
-logger1.warn('User is string to entered restricted page');
+logger1.warn('UserMenu is string to entered restricted page');
 logger1.log('b');
 logger1.error('Unexpected error on the site');
 logger1.log('c');
@@ -88,10 +86,10 @@ setTimeout(() => {
   console.log(logger1.getRecords('log'));
 }, 3500);
 
-// console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
-// console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
+// console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'UserMenu logged out', type: 'log', dateTime: Date }, { message: 'UserMenu is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'UserMenu logged in', type: 'log', dateTime: Date }]
+// console.log(logger1.getRecords('log')); // ===> [{ message: 'UserMenu logged out', type: 'log', dateTime: Date }, { message: 'UserMenu logged in', type: 'log', dateTime: Date }]
 // console.log(logger1.getRecords('error')); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }]
-// console.log(logger1.getRecords('warn')); // ===> [{ message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }]
+// console.log(logger1.getRecords('warn')); // ===> [{ message: 'UserMenu is tring to ented restricted page', type: 'warn', dateTime: Date }]
 
 // const logger2 = createLogger();
 // logger2.warn('Opps, something is happenning');

@@ -1,6 +1,6 @@
 import React from "react";
 
-class User extends React.Component {
+class UserMenu extends React.Component {
   state = {
     user: null
   }
@@ -20,7 +20,7 @@ class User extends React.Component {
     return (
       <div className="user">
         <img
-          alt="User Avatar"
+          alt="UserMenu Avatar"
           src={this.state.user.avatar_url}
           className="user__avatar"
         />

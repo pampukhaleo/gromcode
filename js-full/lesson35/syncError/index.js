@@ -1,4 +1,4 @@
-window.addEventListener('error', function onUnhandledError(err) {
+window.addEventListener('error', (err) => {
   console.error('error', err.message);
 });
 
@@ -6,7 +6,7 @@ let userParsingResult;
 
 try {
   const user = JSON.parse('{"name": "John"}');
-  console.log('User data: ', user);
+  console.log('UserMenu data: ', user);
   userParsingResult = 'success';
 } catch (e) {
   userParsingResult = 'error';

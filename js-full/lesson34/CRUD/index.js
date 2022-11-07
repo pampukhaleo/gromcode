@@ -1,15 +1,15 @@
-const baseUrl = 'https://63453f7539ca915a69f9a53e.mockapi.io/api/v1/users'
+const baseUrl = 'https://63453f7539ca915a69f9a53e.mockapi.io/api/v1/users';
 
 export function getUsersList() {
   // put your code here
   return fetch(baseUrl)
-    .then(response => response.json())
+    .then((response) => response.json());
 }
 
 export function getUserById(userId) {
   // put your code here
   return fetch(`${baseUrl}/${userId}`)
-    .then(response => response.json())
+    .then((response) => response.json());
 }
 
 export function createUser(userData) {
@@ -17,17 +17,17 @@ export function createUser(userData) {
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(userData)
-  })
+    body: JSON.stringify(userData),
+  });
 }
 
 export function deleteUser(userId) {
   // put your code here
   return fetch(`${baseUrl}/${userId}`, {
-    method: 'DELETE'
-  })
+    method: 'DELETE',
+  });
 }
 
 export function updateUser(userId, userData) {
@@ -35,10 +35,10 @@ export function updateUser(userId, userData) {
   return fetch(`${baseUrl}/${userId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(userData)
-  })
+    body: JSON.stringify(userData),
+  });
 }
 
 // examples
@@ -58,7 +58,7 @@ export function updateUser(userId, userData) {
 // };
 
 // createUser(newUserData).then(() => {
-//   console.log('User created');
+//   console.log('UserMenu created');
 // });
 //
 // const updatedUserData = {
@@ -69,9 +69,9 @@ export function updateUser(userId, userData) {
 // };
 
 // updateUser('1', updatedUserData).then(() => {
-//   console.log('User updated');
+//   console.log('UserMenu updated');
 // });
 //
 // deleteUser('2').then(() => {
-//   console.log('User updated');
+//   console.log('UserMenu updated');
 // });

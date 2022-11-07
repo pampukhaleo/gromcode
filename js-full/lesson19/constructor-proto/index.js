@@ -1,11 +1,11 @@
-// create User constructor. export
+// create UserMenu constructor. export
 
-// User creates obj with keys name and age
+// UserMenu creates obj with keys name and age
 
-// User.prototype.sayHi - logs Hi, I am this.name
-// User.prototype.requestNewPhoto - logs New photo request was sent for this.name
+// UserMenu.prototype.sayHi - logs Hi, I am this.name
+// UserMenu.prototype.requestNewPhoto - logs New photo request was sent for this.name
 
-// User.prototype.setAge - sets new this.age and logs New photo request was sent for this.name if age >= 25
+// UserMenu.prototype.setAge - sets new this.age and logs New photo request was sent for this.name if age >= 25
 // setAge return false if age < 0
 // setAge return input if > 0
 
@@ -34,7 +34,7 @@ User.prototype.setAge = function (number) {
   return this.age;
 };
 
-const user = new User('Tom', 30)
+const user = new User('Tom', 30);
 
 console.log(user.setAge(5));
 console.log(user);
