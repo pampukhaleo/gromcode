@@ -1,6 +1,6 @@
 import React from "react";
 import CartTitle from "./CartTitle.jsx";
-import ProductList from "./ProductList.jsx";
+import ProductsList from "./ProductsList.jsx";
 
 class ShoppingCart extends React.Component {
   state = {
@@ -24,7 +24,7 @@ class ShoppingCart extends React.Component {
     return (
       <div className="column">
         <CartTitle userName={this.props.userName} count={count} />
-        <ProductList cartItems={this.state.cartItems}/>
+        <ProductsList cartItems={this.state.cartItems}/>
       </div>
     )
   }
