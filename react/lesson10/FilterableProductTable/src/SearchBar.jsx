@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
       <form>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Expand..."
           value={this.props.filterText}
           onChange={this.handleFilterTextChange}
         />
