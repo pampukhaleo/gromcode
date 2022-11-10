@@ -12,10 +12,10 @@ class Expand extends React.Component {
   }
   render() {
     return (
-      <div class="expand border">
-        <div class="expand__header">
-          <span class="expand__title">{this.props.title}</span>
-          <button class="expand__toggle-btn" onClick={this.toggleExpand}>
+      <div className="expand border">
+        <div className="expand__header">
+          <span className="expand__title">{this.props.title}</span>
+          <button className="expand__toggle-btn" onClick={this.toggleExpand}>
             {
               this.state.expanded
                 ? <i className="fa-solid fa-arrow-up"></i>
