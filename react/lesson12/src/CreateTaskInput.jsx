@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class CreateTaskInput extends React.Component {
   state = {
@@ -26,6 +27,10 @@ class CreateTaskInput extends React.Component {
       </div>
     );
   }
+}
+
+CreateTaskInput.propTypes = {
+  onTaskCreate: PropTypes.func
 }
 
 export default CreateTaskInput;
