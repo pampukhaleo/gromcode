@@ -1,30 +1,24 @@
 import './index.scss';
-import store, { decrement, increment, reset } from './store';
+import store from './store';
+import { addUser, deleteUser } from './users.actions';
 
-const resultElem = document.querySelector('.counter__result');
-const incrementBtn = document.querySelector('[data-action="increment"]');
-const decrementBtn = document.querySelector('[data-action="decrement"]');
-const resetBtn = document.querySelector('[data-action="reset"]');
-
-const onIncrement = () => {
-  store.dispatch(increment());
+const onAddUser = (id, name) => {
+  store.dispatch(addUser(id, name));
 };
 
-const onDecrement = () => {
-  store.dispatch(decrement());
+const onDeleteUser = id => {
+  store.dispatch(deleteUser(id));
 };
 
-const onReset = () => {
-  store.dispatch(reset());
-};
+onAddUser(1, 'Tom');
+onAddUser(2, 'Dad');
+onDeleteUser(2);
+onAddUser(3, 'Vam');
+onDeleteUser(1);
 
-incrementBtn.addEventListener('click', onIncrement);
-decrementBtn.addEventListener('click', onDecrement);
-resetBtn.addEventListener('click', onReset);
+console.log(store.getState().usersList);
 
 store.subscribe(() => {
-  const state = store.getState();
-  const currentValue = state.value;
-  const historyString = state.history.join('');
-  resultElem.textContent = state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
+  const state = store.getState().usersList;
+  console.log(state);
 });
