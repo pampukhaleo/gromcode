@@ -1,7 +1,7 @@
 export const ADD = 'USER/ADD';
 export const DELETE = 'USER/DELETE';
 
-export const addUser = (id, name) => ({
+export const addUser = ({ id, name }) => ({
   type: ADD,
   id,
   name,

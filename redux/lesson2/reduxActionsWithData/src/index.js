@@ -2,19 +2,32 @@ import './index.scss';
 import store from './store';
 import { addUser, deleteUser } from './users.actions';
 
-const onAddUser = (id, name) => {
-  store.dispatch(addUser(id, name));
+const onAddUser = ({ id, name }) => {
+  store.dispatch(
+    addUser({
+      id,
+      name,
+    }),
+  );
 };
 
 const onDeleteUser = id => {
   store.dispatch(deleteUser(id));
 };
 
-onAddUser(1, 'Tom');
-onAddUser(2, 'Dad');
+onAddUser({
+  id: 1,
+  name: 'Tom',
+});
+onAddUser({
+  id: 2,
+  name: 'Van',
+});
+onAddUser({
+  id: 3,
+  name: 'LEo',
+});
 onDeleteUser(2);
-onAddUser(3, 'Vam');
-onDeleteUser(1);
 
 console.log(store.getState().usersList);
 
