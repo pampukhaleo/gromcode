@@ -1,37 +1,19 @@
 import './index.scss';
 import store from './store';
-import { addUser, deleteUser } from './users.actions';
-
-const onAddUser = ({ id, name }) => {
-  store.dispatch(
-    addUser({
-      id,
-      name,
-    }),
-  );
-};
-
-const onDeleteUser = id => {
-  store.dispatch(deleteUser(id));
-};
-
-onAddUser({
-  id: 1,
-  name: 'Tom',
-});
-onAddUser({
-  id: 2,
-  name: 'Van',
-});
-onAddUser({
-  id: 3,
-  name: 'LEo',
-});
-onDeleteUser(2);
-
-console.log(store.getState().usersList);
+import { decrement, increment, reset } from './counter.actions';
+import { addUser, deleteUser, updateUser } from './users.actions';
 
 store.subscribe(() => {
-  const state = store.getState().usersList;
+  const state = store.getState();
   console.log(state);
 });
+
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(reset());
+store.dispatch(decrement());
+store.dispatch(addUser({ id: 1, name: 'Tom' }));
+store.dispatch(addUser({ id: 2, name: 'Denial' }));
+store.dispatch(deleteUser(2));
+store.dispatch(updateUser(1, { name: 'Sarah', age: 15 }));
