@@ -3,9 +3,7 @@ import { DELETEUSER, SETUSER } from './user.actions';
 const userReducer = (state = null, action) => {
   switch (action.type) {
     case SETUSER:
-      return {
-        user: action.payload.userData,
-      };
+      return action.payload.userData;
     case DELETEUSER:
       return null;
     default:
