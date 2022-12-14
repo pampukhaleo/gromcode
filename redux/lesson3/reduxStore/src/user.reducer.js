@@ -1,19 +1,13 @@
 import { DELETEUSER, SETUSER } from './user.actions';
 
-const initialState = {
-  user: null,
-};
-
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = null, action) => {
   switch (action.type) {
     case SETUSER:
       return {
         user: action.payload.userData,
       };
     case DELETEUSER:
-      return {
-        user: null,
-      };
+      return null;
     default:
       return state;
   }
