@@ -1,15 +1,10 @@
-export const INCREMENT = 'COUNTER/INCREMENT';
-export const DECREMENT = 'COUNTER/DECREMENT';
-export const RESET = 'COUNTER/RESET';
+export const NEXT = 'USERS/NEXT';
+export const PREV = 'USERS/PREV';
 
-export const increment = () => ({
-  type: INCREMENT,
+export const goNext = () => ({
+  type: NEXT,
 });
 
-export const decrement = () => ({
-  type: DECREMENT,
-});
-
-export const reset = () => ({
-  type: RESET,
+export const goPrev = () => ({
+  type: PREV,
 });

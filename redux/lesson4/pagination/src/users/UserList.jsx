@@ -1,15 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as usersActions from '../users.actions';
 
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
-const UserList = ({ users }) => {
+const UserList = ({ users, goNext, goPrev, currentPage }) => {
+  const usersPerPage = 3;
+  //get current users
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
   return (
     <div>
-      <Pagination />
+      <Pagination
+        goNext={goNext}
+        goPrev={goPrev}
+        currentPage={currentPage}
+        totalItems={users.length}
+        itemsPerPage={currentUsers.length}
+      />
       <ul className="users">
-        {users.map(user => (
+        {currentUsers.map(user => (
           <User key={user.id} name={user.name} age={user.age} />
         ))}
       </ul>
@@ -20,16 +33,16 @@ const UserList = ({ users }) => {
 const mapState = state => {
   return {
     users: state.users.usersList,
+    currentPage: state.users.currentPage + 1,
   };
 };
-//
-// const mapDispatch = {
-//   increment: counterActions.increment,
-//   decrement: counterActions.decrement,
-//   reset: counterActions.reset,
-// };
-//
-const connector = connect(mapState);
+
+const mapDispatch = {
+  goNext: usersActions.goNext,
+  goPrev: usersActions.goPrev,
+};
+
+const connector = connect(mapState, mapDispatch);
 
 const ConnectedUsersList = connector(UserList);
 
