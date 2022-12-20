@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import * as usersActions from './users.actions';
+import * as usersActions from './user.actions';
 
 const Users = ({ users, createUser, deleteUser }) => {
   const onUserCreate = () => {
