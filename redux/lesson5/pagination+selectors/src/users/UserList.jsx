@@ -4,7 +4,7 @@ import * as usersActions from './users.actions';
 
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
-import { CurrentPageSelector, UsersListSelector } from './users.selectors';
+import { currentPageSelector, usersListSelector } from './users.selectors';
 
 const UserList = ({ users, goNext, goPrev, currentPage }) => {
   const usersPerPage = 3;
@@ -33,8 +33,8 @@ const UserList = ({ users, goNext, goPrev, currentPage }) => {
 
 const mapState = state => {
   return {
-    users: UsersListSelector(state),
-    currentPage: CurrentPageSelector(state),
+    users: usersListSelector(state),
+    currentPage: currentPageSelector(state),
   };
 };
 
