@@ -1,12 +1,28 @@
-import React from 'react';
-// import { connect } from 'react-redux';
-// import * as counterActions from './counter.actions';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import * as usersActions from './users.actions';
+import { getUserData } from './users.gateway';
 
-const SearchField = () => {
+const SearchField = ({ showSpinner, userDataReceived }) => {
+  const [userName, setUserName] = useState('');
+
+  const onChange = event => {
+    setUserName(event.target.value);
+  };
+
+  const handleUserSearch = () => {
+    showSpinner();
+    getUserData(userName).then(userData => {
+      userDataReceived(userData);
+    });
+  };
+
   return (
     <div className="name-form">
-      <input type="text" className="name-form__input" />
-      <button className="name-form__btn btn">Show</button>
+      <input type="text" className="name-form__input" value={userName} onChange={onChange} />
+      <button className="name-form__btn btn" onClick={handleUserSearch}>
+        Show
+      </button>
     </div>
   );
 };
@@ -17,14 +33,13 @@ const SearchField = () => {
 //   };
 // };
 //
-// const mapDispatch = {
-//   increment: counterActions.increment,
-//   decrement: counterActions.decrement,
-//   reset: counterActions.reset,
-// };
+const mapDispatch = {
+  showSpinner: usersActions.showSpinner,
+  userDataReceived: usersActions.userDataReceived,
+};
 //
 // const connector = connect(mapState, mapDispatch);
 //
 // const ConnectedCounter = connector(UserInfo);
 
-export default SearchField;
+export default connect(null, mapDispatch)(SearchField);
