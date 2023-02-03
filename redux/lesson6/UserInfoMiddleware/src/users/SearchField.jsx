@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as usersActions from './users.actions';
-import { getUserData } from './users.gateway';
 
-const SearchField = ({ showSpinner, userDataReceived }) => {
+const SearchField = ({ fetchUserData }) => {
   const [userName, setUserName] = useState('');
 
   const onChange = event => {
@@ -11,10 +10,7 @@ const SearchField = ({ showSpinner, userDataReceived }) => {
   };
 
   const handleUserSearch = () => {
-    showSpinner();
-    getUserData(userName).then(userData => {
-      userDataReceived(userData);
-    });
+    fetchUserData(userName);
   };
 
   return (
@@ -34,8 +30,7 @@ const SearchField = ({ showSpinner, userDataReceived }) => {
 // };
 //
 const mapDispatch = {
-  showSpinner: usersActions.showSpinner,
-  userDataReceived: usersActions.userDataReceived,
+  fetchUserData: usersActions.fetchUserData,
 };
 //
 // const connector = connect(mapState, mapDispatch);
