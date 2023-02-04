@@ -2,14 +2,12 @@ const baseUrl = 'https://63453f7539ca915a69f9a53e.mockapi.io/api/v1/users';
 
 export function getUsersList() {
   // put your code here
-  return fetch(baseUrl)
-    .then((response) => response.json());
+  return fetch(baseUrl).then(response => response.json());
 }
 
 export function getUserById(userId) {
   // put your code here
-  return fetch(`${baseUrl}/${userId}`)
-    .then((response) => response.json());
+  return fetch(`${baseUrl}/${userId}`).then(response => response.json());
 }
 
 export function createUser(userData) {
@@ -42,8 +40,8 @@ export function updateUser(userId, userData) {
 }
 
 // examples
-// getUsersList().then(users => {
-//   console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
+// getUsersList().then(weather => {
+//   console.log(weather); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
 // });
 
 // getUserById('2').then(userData => {

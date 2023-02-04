@@ -7,7 +7,7 @@ import User from './User.jsx';
 
 const UserList = ({ users, goNext, goPrev, currentPage }) => {
   const usersPerPage = 3;
-  //get current users
+  //get current weather
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
