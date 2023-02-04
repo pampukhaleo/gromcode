@@ -12,11 +12,11 @@ const Weather = ({ weatherData, isFetching, fetchWeather, weatherDataReceived })
     return <Spinner />;
   }
 
-  // useEffect(() => {
-  //   fetchWeatherData().then(weatherData => {
-  //     weatherDataReceived(weatherData);
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetchWeatherData().then(weatherData => {
+      weatherDataReceived(weatherData);
+    });
+  }, []);
 
   // useEffect(() => {
   //   fetchWeather();
