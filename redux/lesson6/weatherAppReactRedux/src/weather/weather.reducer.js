@@ -1,18 +1,11 @@
-import { SHOW_SPINNER, WEATHER_DATA_RECEIVED } from './weather.actions';
+import { WEATHER_DATA_RECEIVED } from './weather.actions';
 
 const initialState = {
-  isFetching: false,
-  weatherData: null,
+  weatherData: [],
 };
 
 const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SHOW_SPINNER: {
-      return {
-        ...state,
-        isFetching: true,
-      };
-    }
     case WEATHER_DATA_RECEIVED: {
       return {
         ...state,

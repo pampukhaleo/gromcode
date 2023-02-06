@@ -1,32 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { isFetchingSelector, weatherDataSelector } from './weather.selector';
+import { weatherDataSelector } from './weather.selector';
 
-import Spinner from './Spinner.jsx';
 import City from './City.jsx';
-import { getWeatherData, weatherDataReceived } from './weather.actions';
-import { fetchWeatherData } from './weather.gateway';
+import { getWeatherData } from './weather.actions';
 
-const Weather = ({ weatherData, isFetching, fetchWeather, weatherDataReceived }) => {
-  if (isFetching) {
-    return <Spinner />;
-  }
-
+const Weather = ({ weatherData, fetchWeather }) => {
   useEffect(() => {
-    fetchWeatherData().then(weatherData => {
-      weatherDataReceived(weatherData);
-    });
+    fetchWeather();
   }, []);
-
-  // useEffect(() => {
-  //   fetchWeather();
-  // }, []);
-
-  if (!weatherData) {
-    return null;
-  }
-
-  console.log(weatherData);
 
   return (
     <main className="weather">
@@ -42,14 +24,12 @@ const Weather = ({ weatherData, isFetching, fetchWeather, weatherDataReceived })
 
 const mapState = state => {
   return {
-    isFetching: isFetchingSelector(state),
     weatherData: weatherDataSelector(state),
   };
 };
 //
 const mapDispatch = {
   fetchWeather: getWeatherData,
-  weatherDataReceived: weatherDataReceived,
 };
 //
 // const connector = connect(mapState, mapDispatch);
