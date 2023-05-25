@@ -1,0 +1,27 @@
+body {
+    margin: 50px;
+}
+
+.border {
+    border: 2px solid black;
+}
+
+.box {
+    padding: 50px;
+}
+
+.first {
+    background-color: pink;
+}
+
+.second {
+    background-color: green;
+}
+
+.third {
+    background-color: yellow;
+}
+
+.forth {
+    background-color: blue;
+}
