@@ -1,0 +1,8 @@
+div {
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    /*background-color: grey;*/
+    border: 75px solid transparent;
+    border-top-color: orange;
+}
