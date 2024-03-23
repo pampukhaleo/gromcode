@@ -27,6 +27,9 @@ module.exports = (env, argv) => {
         },
       ],
     },
+    resolve: {
+      modules: ['.', 'node_modules'],
+    },
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
