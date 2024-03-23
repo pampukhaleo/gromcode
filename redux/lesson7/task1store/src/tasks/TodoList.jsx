@@ -1,25 +1,15 @@
 import React from 'react';
 import Task from './Task.jsx';
 import CreateTaskInput from './CreateTaskInput.jsx';
-import { createTask, deleteTask, fetchTasks, updateStatusTask } from './taskGateway';
+import { createTask, deleteTask, updateStatusTask } from './taskGateway';
+import { connect } from 'react-redux';
+import * as tasksAction from './tasks.actions';
+import { tasksSelectors } from './tasks.selectors';
 
 class TodoList extends React.Component {
-  state = {
-    tasks: [],
-  };
-
   componentDidMount() {
-    this.onFetchTasks();
+    this.props.getTasksList();
   }
-
-  onFetchTasks = () => {
-    fetchTasks().then(result =>
-      this.setState({
-        tasks: result,
-      }),
-    );
-  };
-
   onTaskCreate = text => {
     const newTask = {
       text,
@@ -27,11 +17,9 @@ class TodoList extends React.Component {
     };
     createTask(newTask).then(() => this.onFetchTasks());
   };
-
   onTaskDelete = id => {
     deleteTask(id).then(() => this.onFetchTasks());
   };
-
   onTaskStatusUpdate = id => {
     const { done, text } = this.state.tasks.find(task => task.id === id);
     const updatedTask = {
@@ -40,9 +28,8 @@ class TodoList extends React.Component {
     };
     updateStatusTask(id, updatedTask).then(() => this.onFetchTasks());
   };
-
   render() {
-    const sortedTasks = this.state.tasks.slice().sort((a, b) => a.done - b.done);
+    const sortedTasks = this.props.tasks.slice().sort((a, b) => a.done - b.done);
 
     return (
       <main className="todo-list">
@@ -62,4 +49,12 @@ class TodoList extends React.Component {
   }
 }
 
-export default TodoList;
+const mapDispatchToPros = {
+  getTasksList: tasksAction.fetchTasksListAC,
+};
+const mapStateToProps = state => {
+  return {
+    tasks: tasksSelectors(state),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToPros)(TodoList);
