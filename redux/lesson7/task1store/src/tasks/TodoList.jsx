@@ -4,6 +4,7 @@ import CreateTaskInput from './CreateTaskInput.jsx';
 import { connect } from 'react-redux';
 import * as tasksAction from './tasks.actions';
 import { sortedTasksListSelector } from './tasksSelector';
+import PropTypes from 'prop-types';
 
 class TodoList extends React.Component {
   componentDidMount() {
@@ -32,6 +33,14 @@ class TodoList extends React.Component {
     );
   }
 }
+
+TodoList.propTypes = {
+  getTasksList: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+  createTask: PropTypes.func.isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({})),
+};
 
 const mapDispatchToPros = {
   getTasksList: tasksAction.fetchTasksListAC,
