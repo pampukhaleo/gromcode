@@ -7,6 +7,7 @@ export const fetchTasks = () => {
     }
   });
 };
+
 export const createTask = taskData => {
   return fetch(baseUrl, {
     method: 'POST',
@@ -20,6 +21,7 @@ export const createTask = taskData => {
     }
   });
 };
+
 export const deleteTask = id => {
   return fetch(`${baseUrl}/${id}`, {
     method: 'DELETE',
@@ -29,6 +31,7 @@ export const deleteTask = id => {
     }
   });
 };
+
 export const updateStatusTask = (id, taskData) => {
   return fetch(`${baseUrl}/${id}`, {
     method: 'PUT',

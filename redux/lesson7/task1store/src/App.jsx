@@ -2,6 +2,7 @@ import React from 'react';
 import TodoList from './tasks/TodoList.jsx';
 import { Provider } from 'react-redux';
 import { store } from './store';
+
 function App() {
   return (
     <Provider store={store}>
@@ -10,4 +11,5 @@ function App() {
     </Provider>
   );
 }
+
 export default App;
